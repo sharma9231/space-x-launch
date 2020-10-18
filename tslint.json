@@ -1,0 +1,35 @@
+{
+    "extends": [
+        "tslint:latest"
+    ],
+    "rules": {
+        "no-require-imports": false,
+        "no-implicit-dependencies": false,
+        "no-var-requires": false,
+        "quotemark": [
+            true,
+            "single",
+            "jsx-double"
+        ],
+        "no-console": true,
+        "no-submodule-imports": false,
+        "space-within-parens": [
+            false,
+            1
+        ],
+        "whitespace": {
+            "options": [
+                "check-branch",
+                "check-decl",
+                "check-module",
+                "check-operator",
+                "check-separator",
+                "check-type",
+                "check-typecast",
+                "check-type-operator",
+                "check-rest-spread",
+                "check-preblock"
+            ]
+        }
+    }
+}

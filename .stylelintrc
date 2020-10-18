@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "block-no-empty": null,
+    "color-no-invalid-hex": true,
+    "comment-empty-line-before": [ "always", {
+      "ignore": ["stylelint-commands", "after-comment"]
+    } ],
+    "declaration-empty-line-before":["never", {
+      "except": [ ],
+      "ignore": [ ]
+    }],
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "indentation": [4, {
+      "except": ["value"]
+    }],
+    "max-empty-lines": 2,
+    "order/properties-alphabetical-order": true,
+    "rule-empty-line-before": [ "always", {
+      "except": ["first-nested"],
+      "ignore": ["after-comment"]
+    } ],
+    "unit-whitelist": ["em", "rem", "%", "px", "s", "vh", "vw", "deg"]
+  }
+}
