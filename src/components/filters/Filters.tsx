@@ -4,6 +4,9 @@ import './Filters.css';
 
 export interface IFilterProps {
     updateFilters: (filterValue?: any, title?: string) => void;
+    selectedYear?: string;
+    selectedLaunch?:string;
+    selectedLand?: string;
 }
 
 const Filter: React.FunctionComponent<IFilterProps> = (props: IFilterProps) => {
@@ -20,7 +23,7 @@ const Filter: React.FunctionComponent<IFilterProps> = (props: IFilterProps) => {
                 <div className={'row'}>
                     {defaultLaunchYear.map((value: string, key: number) => {
                         return (<div key={key} className={'col-6 filter-content'}>
-                            <span onClick={() => props.updateFilters(value, filterConstants.LAUNCH_YEAR)} className={'filter-value'}>{value}</span></div>)
+                            <span onClick={() => props.updateFilters(value, filterConstants.LAUNCH_YEAR)} className={props.selectedYear === value ? 'filter-value filter-value-selected': 'filter-value'}>{value}</span></div>)
                     })}
                 </div>
             </div>
@@ -29,16 +32,16 @@ const Filter: React.FunctionComponent<IFilterProps> = (props: IFilterProps) => {
                 <div className={'row'}>
                     {defaultSuccessfulLaunch.map((value: string, key: number) => {
                         return (<div key={key} className={'col-6 filter-content'}>
-                            <span onClick={() => props.updateFilters(value, filterConstants.SUCCESSFUL_LAUNCH)} className={'filter-value'}>{value}</span></div>)
+                            <span onClick={() => props.updateFilters(value, filterConstants.SUCCESSFUL_LAUNCH)} className={props.selectedLaunch === value ? 'filter-value filter-value-selected': 'filter-value'}>{value}</span></div>)
                     })}
                 </div>
             </div>
             <div className={'landing-container'}>
-                <div className={'filter-title'}>{filterConstants.LAUNCH_YEAR}</div>
+                <div className={'filter-title'}>{filterConstants.SUCCESSFUL_LANDING}</div>
                 <div className={'row'}>
                     {defaultSuccessfulLanding.map((value: string, key: number) => {
                         return (<div key={key} className={'col-6 filter-content'} >
-                            <span onClick={() => props.updateFilters(value, filterConstants.SUCCESSFUL_LANDING)} className={'filter-value'}>{value}</span></div>)
+                            <span onClick={() => props.updateFilters(value, filterConstants.SUCCESSFUL_LANDING)} className={props.selectedLand === value ? 'filter-value filter-value-selected': 'filter-value'}>{value}</span></div>)
                     })}
                 </div>
             </div>

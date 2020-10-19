@@ -17,7 +17,7 @@ const SpaceListing: React.FunctionComponent<ISpaceListingProps> = (props: ISpace
                 (listings && listings.SpaceData && listings.SpaceData.length > 0) ?
                     (listings.SpaceData.map((lists: any, key: number) => {
                         return (
-                            <div key={key} className={' col-md-3 col-lg-3 col-sm-12'}>
+                            <div key={key} className={'col-md-4 col-lg-3 col-sm-12'}>
                                 <div className={'listing-container'}>
                                     <div className={'img-container'}>
                                         <img className={'img-box'} src={lists?.links?.mission_patch_small} alt={''} />
