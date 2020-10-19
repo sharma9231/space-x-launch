@@ -47,7 +47,7 @@ const Home: React.FC<any> = (props: any) => {
     }
 
     useEffect(() => {
-        let apiUrl = 'https://api.spacexdata.com/v3/launches?limit=10';
+        let apiUrl = 'https://api.spacexdata.com/v3/launches?limit=100';
         if (launch) {
             apiUrl += '&launch_success=' + launch;
         }
