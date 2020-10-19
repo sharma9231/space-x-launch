@@ -8,8 +8,8 @@ import Home from './pages/Home';
 
 const MainRoutes = () => (
     <Switch>
-      {/* <Route path='/' component={Home}/> */}
-      <Route path='/home/:year/:launch/:land' component={Home}/> 
+      {/* <Route path='/' exact component={Home}/> */}
+      <Route path='/home/:year?/:launch?/:land?' component={Home}/> 
       {/* <Route path='/home' component={Home}/> */}
       {/* <Route  path={["/", '/home/:year/:launch/:land']}  component={Home}/>  */}
     </Switch>

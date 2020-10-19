@@ -4,16 +4,16 @@
 }
 
 .filter-header {
-    text-align: left;
     font-weight: bold;
     margin-left: 5%;
     padding-top: 2%;
+    text-align: left;
 }
 
 .filter-title {
     border-bottom: 2px solid #CCCCCC;
-    margin: 0 20px;
     font-weight: 600;
+    margin: 0 20px;
 }
 
 .filter-content {
@@ -22,8 +22,8 @@
 
 .filter-value {
     background-color: #CAF0D5;
-    padding: 5px;
     border-radius: 5px;
-    text-transform: capitalize;
     cursor: pointer;
+    padding: 5px;
+    text-transform: capitalize;
 }

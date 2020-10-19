@@ -1,19 +1,19 @@
 .listing-container {
     background-color: #FFFF;
-    padding: 10px;
-    margin-bottom: 15px;
-    height: 440px;
     border-radius: 5px;
+    height: 440px;
+    margin-bottom: 15px;
+    padding: 10px;
 }
 
 .filterTitle {
-    text-align: center;
     border-bottom: 1px solid #A9A9A9;
+    text-align: center;
 }
 
 .filterContent {
-    border: 1px solid #A9DFBF;
     background-color: #7DCEA0;
+    border: 1px solid #A9DFBF;
     color: #FFFF;
 }
 
@@ -21,9 +21,10 @@
     background-color: #E4E9E6;
     margin: 5px;
 }
+
 .mission-title{
-color: #5978E7;
-font-weight: bold;
+    color: #5978E7;
+    font-weight: bold;
 }
 
 label {
@@ -44,6 +45,12 @@ label {
 }
 
 .label-content{
-text-transform: capitalize;
     margin-left: 2%;
+    text-transform: capitalize;
+}
+
+.spinner {
+    position: absolute;
+    right: 50%;
+    top: 30%;
 }

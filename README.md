@@ -13,6 +13,10 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 
+## `npm run build`
+
+
+
 ## Stack used
 
 React
@@ -21,10 +25,18 @@ React-router
 Typescript
 
 
+## build check
+
+1. TSlint 
+    config file is at root folder: 'tslint.json'
+2. Stylelint
+    config file is at root folder: '.stylelintrc'
+
+
 
 ## github
 
-Github Url : 
+Github Url : https://github.com/sharma9231/space-x-launch.git
 
 
 
