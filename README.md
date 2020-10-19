@@ -40,6 +40,6 @@ Github Url : https://github.com/sharma9231/space-x-launch.git
 
 
 
-## Heroku 
+## Vercel deployment server
 
-Heroku Url:
+Vercel Url: https://space-x-launch-ecru.vercel.app/
