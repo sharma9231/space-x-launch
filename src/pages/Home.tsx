@@ -31,7 +31,12 @@ const Home: React.FC<any> = (props: any) => {
     const [launch, setLaunch] = useState(queries?.launch);
     const [land, setLand] = useState(queries?.land);
     const [loaded, setLoaded] = useState(false);
+    const [deviceHeight, setDeviceHeight] = useState(window?.innerHeight);
+    const [deviceWidth, setDeviceWidth] = useState(window?.innerWidth);
 
+    const listingContainer = ( deviceHeight >= 768 && deviceWidth <= 1024 ) ? 'col-lg-6 col-md-6 col-sm-12' : 'col-lg-3 col-md-6 col-sm-12';
+    const filterContainerClass = ( deviceHeight >= 768 && deviceWidth <= 1024 ) ? 'col-lg-3 col-md-3 col-sm-12 filter-margin' : 'col-lg-2 col-md-3 col-sm-12 filter-margin';
+    const listingContainerClass = ( deviceHeight >= 768 && deviceWidth <= 1024 ) ? 'col-lg-9 col-md-9 col-sm-12' : 'col-lg-10 col-md-9 col-sm-12';
     const fetchApi = (apiUrl: any) => {
         setLoaded(false);
         axios.get(apiUrl)
@@ -58,7 +63,16 @@ const Home: React.FC<any> = (props: any) => {
             apiUrl += '&land_success=' + land;
         }
         fetchApi(apiUrl);
+        window.addEventListener( 'resize', handleWindowResize, { passive: true } );
+        return () => {
+            window.removeEventListener( 'resize', handleWindowResize );
+          }
     }, [year, launch, land]);
+
+    const handleWindowResize = () => {
+        setDeviceHeight(window?.innerHeight);
+        setDeviceWidth(window?.innerWidth);
+    }
 
     const updateFilters = (filterValue?: any, title?: string) => {
         if (title === constants.LAUNCH_YEAR) {
@@ -84,11 +98,11 @@ const Home: React.FC<any> = (props: any) => {
                 <h2 className={'header ml-3'}>SpaceX Launch Programs</h2>
             </header>
             <div className={'row m-0'}>
-                <div className={'col-lg-2 col-md-3 col-sm-12 filter-margin'}>
+                <div className={filterContainerClass}>
                     <Filter updateFilters={updateFilters} selectedYear ={year} selectedLaunch={launch} selectedLand={land}/>
                 </div>
-                <div className={'col-lg-10 col-md-9 col-sm-12'}>
-                    <SpaceListing spaceListingData={props.SpaceData} loaded={loaded} />
+                <div className={listingContainerClass}>
+                    <SpaceListing spaceListingData={props.SpaceData} loaded={loaded} widgetContainerClass = {listingContainer}/>
                 </div>
             </div>
             <footer>

@@ -1,7 +1,7 @@
 .listing-container {
     background-color: #FFFF;
     border-radius: 5px;
-    height: 440px;
+    height: 490px;
     margin-bottom: 15px;
     padding: 10px;
 }
@@ -29,6 +29,7 @@
 
 label {
     font-weight: bold;
+    width: 100px;
 }
 
 .details-container {
@@ -53,4 +54,9 @@ label {
     position: absolute;
     right: 50%;
     top: 30%;
+}
+
+.details-content {
+    display: flex;
+    line-height: 1.3;
 }

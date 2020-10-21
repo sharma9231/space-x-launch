@@ -7,6 +7,7 @@ export interface ISpaceListingProps {
     spaceListingData?: any;
     SpaceData?: any;
     loaded?: boolean;
+    widgetContainerClass?: string;
 }
 
 const SpaceListing: React.FunctionComponent<ISpaceListingProps> = (props: ISpaceListingProps) => {
@@ -17,7 +18,7 @@ const SpaceListing: React.FunctionComponent<ISpaceListingProps> = (props: ISpace
                 (listings && listings.SpaceData && listings.SpaceData.length > 0) ?
                     (listings.SpaceData.map((lists: any, key: number) => {
                         return (
-                            <div key={key} className={'col-md-4 col-lg-3 col-sm-12'}>
+                            <div key={key} className={props.widgetContainerClass}>
                                 <div className={'listing-container'}>
                                     <div className={'img-container'}>
                                         <img className={'img-box'} src={lists?.links?.mission_patch_small} alt={''} />
@@ -29,13 +30,17 @@ const SpaceListing: React.FunctionComponent<ISpaceListingProps> = (props: ISpace
                                                 <ul className={'m-0'}>
                                                     <li className={'mission-id'}>{lists?.mission_id?.[0]}</li>
                                                 </ul></div> : ''}
-                                        <div>
-                                            <label>Successful Launch: </label>
-                                            <span className={'label-content'}>{lists?.launch_success?.toString()}</span>
+                                        <div className={'details-content'}>
+                                            <label>Launch Year: </label>
+                                            <p className={'label-content'}>{lists?.launch_year?.toString()}</p>
                                         </div>
-                                        <div>
+                                        <div className={'details-content'}>
+                                            <label>Successful Launch: </label>
+                                            <p className={'label-content'}>{lists?.launch_success?.toString()}</p>
+                                        </div>
+                                        <div className={'details-content'}>
                                             <label>Successful Landing: </label>
-                                            <span className={'label-content'}>{lists?.launch_date_utc}</span>
+                                            <p className={'label-content'}>{lists?.rocket?.first_stage?.cores?.[0]?.land_success?.toString()}</p>
                                         </div>
                                     </div>
                                 </div>
